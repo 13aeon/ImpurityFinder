@@ -6,9 +6,9 @@
 pic_num= 5005;
 c= 0.9;
 a= 250;
-str_out= 'D:\学习\2016-2017学年（大三）下\03统计信号处理\大作业\out';
-str_total= 'D:\学习\2016-2017学年（大三）下\03统计信号处理\大作业\total';
-str_test= 'D:\学习\2016-2017学年（大三）下\03统计信号处理\大作业\test';
+str_out= 'D:\瀛︿範\2016-2017瀛﹀勾锛堝ぇ涓夛級涓媆03缁熻淇″彿澶勭悊\澶т綔涓歕out';
+str_total= 'D:\瀛︿範\2016-2017瀛﹀勾锛堝ぇ涓夛級涓媆03缁熻淇″彿澶勭悊\澶т綔涓歕total';
+str_test= 'D:\瀛︿範\2016-2017瀛﹀勾锛堝ぇ涓夛級涓媆03缁熻淇″彿澶勭悊\澶т綔涓歕test';
 
 train_num= round(pic_num*c);
 test_num= pic_num- round(pic_num*c);
@@ -25,7 +25,7 @@ for i=1:train_num
     image= imread(name);
     label(i)= name(1)-'0';
     % place the characters to data
-    data(i,:)= ch_vector(image);
+    data(i,:)= ch_vector_v1(image);
 end
 
 %% train & test
@@ -41,7 +41,7 @@ for i=1:test_num
     image= imread(name);
     label_test(i)= name(1)- '0';
     % place the characters
-    test_data(i,:)= ch_vector(image); 
+    test_data(i,:)= ch_vector_v1(image); 
 end
 
 % index_t= [2800:2800+test_num-1];
@@ -62,7 +62,7 @@ end
 [test_out,score] = predict(SVMModel,test_data);
 plotroc(label_test',score(:,2)');
 [~,~,~,AUC]= perfcurve(label_test',score(:,2)',1);
-write_result(test_pic,index_t,label_test);
+write_result_v1(test_pic,index_t,label_test);
 AUC,
 
 
