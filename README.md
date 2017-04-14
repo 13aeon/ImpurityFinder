@@ -4,7 +4,9 @@ Software implementation to detect impurity in tabacco, with 3 different methods 
 
 Author:
 Banghua Zhu, 13aeon.v01d@gmail.com
+
 Liren Chen, clr14@mails.tsinghua.edu.cn
+
 Jinhui Song, sjh14@mails.tsinghua.edu.cn
 
 ## Introduction 
