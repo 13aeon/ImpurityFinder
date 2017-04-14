@@ -17,7 +17,7 @@ label= zeros(train_num,1);                  % label of training data
 % addpath(genpath(str_out),genpath(str_test));
 addpath(genpath(str_total));                % choose the set
 test_pic= dir(strcat(str_total,'\*.bmp'));
-[~,length]= size(ch_vector(imread(test_pic(1).name)));
+[~,length]= size(ch_vector_v1(imread(test_pic(1).name)));
 data= zeros(train_num,length);
 
 for i=1:train_num
