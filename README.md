@@ -43,16 +43,16 @@ Then one of `xgboosttrain.py`, `dnntrain.py`, `svmtrain.m` runs and saves the tr
 
 ### Testing part
 
-In this part, we use the trained model from Training part to test on certain images. Take `image\20161121-04.bmp` as an example, the procedure can be done in command line as follows (Note that in windows, `rm -r segmented` should be replace with `del /F /S /Q segmented`):
+In this part, we use the trained model from Training part to test on certain images. Take `..\image\20161121-04.bmp` as an example, the procedure can be done in command line as follows (Note that in windows, `rm -r segmented` should be replace with `del /F /S /Q segmented`):
 
 ```
-matlab -nosplash -nojvm -nodesktop -r img2segment('image\20161121-04.bmp')
+matlab -nosplash -nojvm -nodesktop -r img2segment('..\image\20161121-04.bmp')
 python xgboostclassify.py
-matlab -nosplash -nojvm -nodesktop -r segment2img('image\20161121-04.bmp')
+matlab -nosplash -nojvm -nodesktop -r segment2img('..\image\20161121-04.bmp')
 rm -r segmented
 ```
 
-Please note that this set of command line can only deal with one image each time, and remember to delete the segmented folder before processing a second image. The .sh file for linux shell and .bat file for windows command line is provided. One only needs to change the variable 'filename' in the command line file to run ImpurityFinder on different images.
+Note that this set of command line can only deal with one image each time, and remember to delete the segmented folder before processing a second image. The .sh file for linux shell and .bat file for windows command line is provided. One only needs to change the variable 'filename' in the command line file to run ImpurityFinder on different images.
 
 # Results:
 

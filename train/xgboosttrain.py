@@ -12,7 +12,6 @@ from sklearn.decomposition import PCA
 from skimage import data
 from skimage.util import img_as_float
 from skimage.filters import gabor_kernel
-import matplotlib.pyplot as plt
 random.seed(1313)
 np.random.seed(13)
 cnt = 0
@@ -98,15 +97,6 @@ false_positive_rate, true_positive_rate, thresholds = roc_curve(data_test[:test_
 roc_auc = auc(false_positive_rate, true_positive_rate)
 print(train_cnt,test_cnt)  
 
-'''
-plt.plot(false_positive_rate, true_positive_rate, 'b')
-plt.legend(loc='lower right')
-plt.plot([0,1],[0,1],'r--')
-plt.xlim([-0.1,1.2])
-plt.ylim([-0.1,1.2])
-plt.savefig('roc.png')
-'''
-#print(preds)
 print(res)
 np.save('falsepos.npy',false_positive_rate)
 np.save('truepos.npy',true_positive_rate)
