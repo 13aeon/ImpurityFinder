@@ -60,13 +60,4 @@ Note that this set of command line can only deal with one image each time, and r
 
 ## Analysis of Results
 
-### showing ground truth on graph
-Some programs are for debugging and oberservation. For example, one can get the ground truth by mapping reads to reference and get `ecoli.ecoli.ref.las`.
-
-This `las` file can be parsed to json file for other programs to use. 
-
-```
-run_mapping.py ecoli ecoli.ref ecoli.ecoli.ref.las 1-$ 
-```
-
-In the prune step, if `ecoli.mapping.json` exists, the output `graphml` file will contain the information of ground truth. 
+Most of the analysis of results can be seen in the pdf report. In train folder, we save the false positive rate and true positive rate as falsepos.npy and truepos.npy. One can utilize rocplot.py to read them and plot the corresponding ROC curve for our classifier. 
