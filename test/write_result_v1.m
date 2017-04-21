@@ -1,7 +1,7 @@
 function y= write_result_v1(test_pic,index,output)
 % print classification result to result.txt; write in circle structure
 
-file= fopen('predict.txt','w');
+file= fopen('predicted.txt','w');
 sz= size(index);
 num= sz(2);
 for i=1:num

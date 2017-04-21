@@ -6,3 +6,4 @@ pause
 matlab -nosplash -nojvm -nodesktop -r segment2img('%image_path%')
 pause
 del /F /S /Q segmented
+del predicted.txt

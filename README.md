@@ -15,6 +15,10 @@ ImpurityFinder is a image processing algorithms based solution for detecting imp
 
 Please notice that in order to run our algorithm, you only need to download the test folder. The train folder might be large because of the segmented images. 
 
+Easy Start:
+
+One can go directly into test folder and run process_svm.sh or process_xgboost.sh after all the dependencies are installed.
+
 ## Pipeline and Details
 
 Here we provide two packages of ImpurityFinder. In training folder, we provide all the source code for training. And in test folder, our trained classifier is provided to take a tabacco image as input, and give a processed image as output.
@@ -44,6 +48,7 @@ In this part, we use `Segment.m` to segment the image into patches of size 250×
 Then one of `xgboosttrain.py`,  `svmtrain.m` runs and saves the trained model into model folder. `rocplot.py` is used to plot the ROC curve.
 
 P.S. We've also tried GAN based deep learning methods, and we present the code in folder `train\deep`. However, we didn't report this work because the auc performance of this is not as good as xgboost and SVM. 
+
 ### Testing part
 
 In this part, we use the trained model from Training part to test on certain images. Take `..\image\20161121-04.bmp` as an example (we didn't put the image into folders because they're so large), the procedure can be done in command line as follows (Note that in windows, `rm -r segmenteds` should be replace with `del /F /S /Q segmented`):
