@@ -1,19 +1,24 @@
 function y= ch_vector_v1(image)
 % return row vector of several characters of the image
 
-BW= edge(rgb2gray(image),'sobel');
-En= entropy(image);
-S= bwarea(BW);
+En= entropy(rgb2gray(image));                     % Entropy: change to gray image
+Er= max(xcorr(reshape(image,1,numel(image))));    % Correlation
+
+BW= edge(rgb2gray(image),'sobel');                % binary image
+S= bwarea(BW);                                    % area of BW
+
+% ST= regionprops(BW,'Perimeter'); 
+% Pm= ST(1).Perimeter;
 % L= bweuler(BW,4);
-Er= max(xcorr(reshape(image,1,numel(image))));
+% C= Pm^2/S;
+
 hist= ColorHistogram(image);
 
-% [H, theta, rho]= hough(BW,'RhoResolution',0.5,'ThetaResolution',0.5);
-% p= houghpeaks(H,5);
-% lines= houghlines(BW,theta,rho,p);
-% iflines= length(lines);
-% linear= max(max(H));
+% scaling
+En= En/10;
+Er= Er/10^9;
+S= S/10000;
 
-y=[En, S, Er, hist(1:80)];
+y=[ En, S, Er, hist(1:80)];
 
 end
