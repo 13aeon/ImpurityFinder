@@ -6,19 +6,20 @@
 pic_num= 5005;
 c= 0.9;
 a= 250;
-str_out= 'out';
-str_total= 'total';
-str_test= 'test';
+str_out= 'patch\out';
+str_test= 'patch\test';
 
 train_num= round(pic_num*c);
 test_num= pic_num- round(pic_num*c);
 index= sort(randperm(pic_num,train_num));
 label= zeros(train_num,1);                  % label of training data
-% addpath(genpath(str_out),genpath(str_test));
-addpath(genpath(str_total));                % choose the set
-test_pic= dir(strcat(str_total,'\*.bmp'));
-[~,length]= size(ch_vector_v1(imread(test_pic(1).name)));
-data= zeros(train_num,length);
+% set the path 
+addpath(genpath(str_out),genpath(str_test));
+% addpath(genpath(str_total));                % choose the set
+test_pic1= dir(strcat(str_out,'\*.bmp'));
+test_pic2= dir(strcat(str_test,'\*.bmp'));
+test_pic= [test_pic1;test_pic2];
+
 
 for i=1:train_num
     name= test_pic(index(i)).name;

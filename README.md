@@ -11,7 +11,7 @@ Jinhui Song, sjh14@mails.tsinghua.edu.cn
 
 ## Introduction 
 
-ImpurityFinder is a image processing algorithms based solution for detecting impurity in tabacco. This is one of the projects for course Statistical Signal Processing in Tsinghua University. Since we form a team of 3, we've implemented 3 methods for impurity detection. 
+ImpurityFinder is a image processing algorithms based solution for detecting impurity in tabacco. This is one of the projects for course Statistical Signal Processing in Tsinghua University.
 
 Please notice that in order to run our algorithm, you only need to download the test folder. The train folder might be large because of the segmented images. 
 
