@@ -64,5 +64,5 @@ plotroc(label_test',score(:,2)');
 [~,~,~,AUC]= perfcurve(label_test',score(:,2)',1);
 write_result_v1(test_pic,index_t,label_test);
 AUC,
-
+save out2total.mat
 
