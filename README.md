@@ -1,6 +1,6 @@
 # ImpurityFinder
 
-Software implementation to detect impurity in tabacco, with 3 different methods (color histogram + SVM, color histogram + XGBoost, Deep Neural Network).
+Software implementation to detect impurity in tabacco, with 2 different methods (color histogram + SVM or XGBoost).
 
 Author:
 Banghua Zhu, 13aeon.v01d@gmail.com
@@ -49,7 +49,7 @@ In this part, we use the trained model from Training part to test on certain ima
 
 ```
 matlab -nosplash -nojvm -nodesktop -r img2segment('..\image\20161121-04.bmp')
-python xgboostclassify.py
+python xgboostclassify.py # This can be replaced with matlab -nosplash -nojvm -nodesktop -r svmtest.m
 matlab -nosplash -nojvm -nodesktop -r segment2img('..\image\20161121-04.bmp')
 rm -r segmented
 ```
