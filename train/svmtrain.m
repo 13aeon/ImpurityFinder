@@ -3,7 +3,7 @@
 %% preparation
 % pic_num= 3661;
 % pic_num= 1344;
-pic_num= 5005;
+pic_num= 4965;
 c= 0.9;
 a= 250;
 str_out= 'patch\out';
@@ -65,5 +65,5 @@ plotroc(label_test',score(:,2)');
 [~,~,~,AUC]= perfcurve(label_test',score(:,2)',1);
 write_result_v1(test_pic,index_t,label_test);
 AUC,
-save out2total.mat
+save svmmodel.mat
 

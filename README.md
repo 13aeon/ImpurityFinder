@@ -41,11 +41,12 @@ It may be easy for one to get the first 5 packages installed. For xgboost, pleas
 
 In this part, we use `Segment.m` to segment the image into patches of size 250×250, label them 1 if they're in a bounding box of certain colors, and 0 otherwise, and save all the segmented pieces into patch/out/ (or test) folder.
 
-Then one of `xgboosttrain.py`, `dnntrain.py`, `svmtrain.m` runs and saves the trained model into model folder. `rocplot.py` is used to plot the ROC curve.
+Then one of `xgboosttrain.py`,  `svmtrain.m` runs and saves the trained model into model folder. `rocplot.py` is used to plot the ROC curve.
 
+P.S. We've also tried GAN based deep learning methods, and we present the code in folder `train\deep`. However, we didn't report this work because the auc performance of this is not as good as xgboost and SVM. 
 ### Testing part
 
-In this part, we use the trained model from Training part to test on certain images. Take `..\image\20161121-04.bmp` as an example, the procedure can be done in command line as follows (Note that in windows, `rm -r segmented` should be replace with `del /F /S /Q segmented`):
+In this part, we use the trained model from Training part to test on certain images. Take `..\image\20161121-04.bmp` as an example (we didn't put the image into folders because they're so large), the procedure can be done in command line as follows (Note that in windows, `rm -r segmenteds` should be replace with `del /F /S /Q segmented`):
 
 ```
 matlab -nosplash -nojvm -nodesktop -r img2segment('..\image\20161121-04.bmp')
