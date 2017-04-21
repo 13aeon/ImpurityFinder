@@ -1,5 +1,5 @@
 clear
-load 'model\out2total.mat'
+load 'model\svmmodel.mat'
 str_out= 'segmented';
 
 % set the path 
